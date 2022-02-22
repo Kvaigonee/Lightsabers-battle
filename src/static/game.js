@@ -3,21 +3,23 @@ const socket = io();
 const WINDOW_WIDTH = window.innerWidth;
 const WINDOW_HIGHT = window.innerHeight;
 
+const WINDOW = window;
+
 const canvas = document.getElementById("canvas");
 canvas.width = WINDOW_WIDTH;
 canvas.height = WINDOW_HIGHT;
 const context = canvas.getContext("2d");
 
-socket.emit("new player", context);
+socket.emit("new player");
 
 socket.on("state", (players) => {
 	context.beginPath();
 	context.fillStyle = "black";
-	context.fillRect(0, 0, 800, 600);
+	context.fillRect(0, 0, WINDOW_WIDTH, WINDOW_HIGHT);
 	context.closePath();
 	for (const id in players) {
 		const player = players[id];
-		drawPlayer(context, player);
+		drawPlayer(context, player, WINDOW_HIGHT, WINDOW_WIDTH);
 	}
 });
 
@@ -32,7 +34,7 @@ const drawKillItem = (ctx, player) => {
 		ctx.clearRect(0, 0, 500, 600);
 		ctx.closePath();
 	}, 3000);
-}
+};
 
 const killItem = document.getElementById("killItem");
 killItem.width = 500;
@@ -42,4 +44,3 @@ const ctx = killItem.getContext("2d");
 socket.on("kill", (player) => {
 	drawKillItem(ctx, player);
 });
-
