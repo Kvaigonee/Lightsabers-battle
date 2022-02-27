@@ -3,7 +3,7 @@ const movement = {
 	down: false,
 	left: false,
 	right: false,
-	kick: false
+	kick: false,
 };
 
 document.addEventListener("keydown", (event) => {
