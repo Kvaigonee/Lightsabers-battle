@@ -1,4 +1,4 @@
-const { myMath } = require("./math");
+const myMath = require("./math");
 
 class Player {
 	constructor(props) {

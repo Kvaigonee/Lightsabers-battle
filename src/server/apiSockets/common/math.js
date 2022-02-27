@@ -1,4 +1,4 @@
-module.exports.myMath = {
+module.exports = {
 	random: (a, b) => {
 		return parseInt(Math.random() * (b - a) + a);
 	},

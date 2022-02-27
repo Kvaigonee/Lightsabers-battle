@@ -1,5 +1,5 @@
 const { Player } = require("./player.js");
-const { myMath } = require("./math");
+const myMath = require("./math");
 
 const ANGEL_KEF = Math.PI / 200;
 const COLOR_LIGHTSABERS = ["green", "red", "blue", "white"];

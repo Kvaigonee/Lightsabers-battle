@@ -1,0 +1,4 @@
+1. Refactoring server.js
+2. Create and test (login, checkAutorisation) methods for userController
+3. Middleware for checking user auth
+4. Create game config for game constants
